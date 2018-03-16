@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Doc (80 char length for optimal godoc code-block parsing)                    | <- 80
+// Doc (90 char length for optimal godoc code-block parsing)                              | <- 90
 //-------------------------------------------------------------------------------------------------- <-100
 
 package transforms
@@ -52,10 +52,10 @@ import (
 //     h = threshold
 //     z = scale
 //
-// Example of a close-ended curve (x, 1.16724, 80.0, 20.0), in a range of 0=>100 a value of 100 will
-// equal 0, while all values up to 0.56 (56%) will equal 100.
+// Example of a close-ended curve (x, 1.16724, 80.0, 20.0), in a range of 0.00=>0.99 a value of 0.99 will
+// equal 0 (to 2 positions), while all values up to 0.56 (56%) will equal 100.
 //
-//     n := AdaptiveZoneFlt(0.50, 1.16724, 80.0, 20.0)
+//    n := AdaptiveZoneFlt(0.99, 1.16724, 80.0, 20.0)
 func AdaptiveZoneFlt(x float64, n float64, h float64, z float64) float64 {
 	k := 100000.0
 

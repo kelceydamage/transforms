@@ -14,8 +14,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Doc
-//---------------------------------------------------------------------------------------------------- <-100
+// Doc (90 char length for optimal godoc code-block parsing)                              | <- 90
+//-------------------------------------------------------------------------------------------------- <-100
 // This file is to pretty up the godoc.
 
 // Package transforms is a library of types and methods for running transform algorithms against certain

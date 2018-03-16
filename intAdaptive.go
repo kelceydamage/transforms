@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------------------------------- <-100
+//-------------------------------------------------------------------------------------------------- <-100
 // Author: Kelcey Damage
 // Go: 1.10
 
@@ -14,8 +14,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Doc (80 char length for optimal godoc code-block parsing)                    | <- 80
-//---------------------------------------------------------------------------------------------------- <-100
+// Doc (90 char length for optimal godoc code-block parsing)                              | <- 90
+//-------------------------------------------------------------------------------------------------- <-100
 
 package transforms
 
@@ -24,7 +24,7 @@ import (
 )
 
 // Code
-//---------------------------------------------------------------------------------------------------- <-100
+//-------------------------------------------------------------------------------------------------- <-100
 
 // AdaptiveZoneInt converts a normalized float (percent expressed as 0.0 - 1.0) and determines if it
 // exceeds the normalZone and by how much. Return values a capped at 100 and -Inf.
@@ -47,20 +47,17 @@ import (
 //
 // A signal value expressed as an int.
 //
-//     x = normalizedValue
+//     xi = normalizedValue
 //     n = suppressionFactor
 //     h = threshold
 //     z = scale
 //
-// Example of a close-ended curve (x, 1.16724, 80.0, 20.0), in a range of 0=>100 a value of 100 will
-// equal 0, while all values up to 0.56 (56%) will equal 100.
+// Example of a close-ended curve (x, 1.16724*100, 80.0, 20.0), in a range of 0=>99 a value of 99 will
+// equal 0, while all values up to 56 (56%) will equal 100.
 //
-//     n := AdaptiveZoneInt(0.50, 1.16724, 80.0, 20.0)
-func AdaptiveZoneInt(xi int, ni int, hi int, zi int) int {
+//     n := n := AdaptiveZoneInt(99, 1.16724*100, 80, 20)
+func AdaptiveZoneInt(xi int, n float64, h float64, z float64) int {
 	x := float64(xi)
-	n := float64(ni)
-	h := float64(hi)
-	z := float64(zi)
 	k := 100000.0
 
 	// Calculate zero point
