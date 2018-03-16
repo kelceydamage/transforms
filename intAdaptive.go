@@ -27,25 +27,38 @@ import (
 //---------------------------------------------------------------------------------------------------- <-100
 
 // AdaptiveZoneInt converts a normalized float (percent expressed as 0.0 - 1.0) and determines if it
-// exceeds the normalZone and by how much.
+// exceeds the normalZone and by how much. Return values a capped at 100 and -Inf.
 //
-//     [threshold] is a relative point of inflection where the straight line will curve. At [scale=100] the
-//     curve will always from exactly at threshold.
+// Threshold [h]
 //
-//     [scale] is a y axis weight, at 100 the inflection point is == to the threshold
+//     A relative point of inflection where the straight line will curve. At [scale=100] the curve will
+//     always from exactly at threshold.
 //
-//     [suppressionFactor] envelopes the normilization of the norma I. at 1, 0.50 == 50. At 2, 0.50 == 25.
-//     This can help squash signals with too much variance.
+// Scale [z]
 //
-//     [normalizedValue] is a signal value expressed as a float.
+//     Y axis shift, at 100 the inflection point is == to the threshold.
+//
+// SuppressionFactor [n]
+//
+//     Envelopes the norma I. at 1, 0.50 == 50. At 2, 0.50 == 25. This can help squash signals with too much
+//     variance.
+//
+// NormalizedValue [x]
+//
+//     is a signal value expressed as an int.
 //
 // Example of a close-ended curve (x, 1.16724, 80.0, 20.0), in a range of 0=>100 a value of 100 will equal 0,
 // while all values up to 0.56 (56%) will equal 100.
-func AdaptiveZoneInt(normalizedValue int, suppressionFactor int, threshold int, scale int) int {
-	x := float64(normalizedValue)
-	n := float64(suppressionFactor)
-	h := float64(threshold)
-	z := float64(scale)
+//     n := AdaptiveZoneInt(0.50, 1.16724, 80.0, 20.0)
+func AdaptiveZoneInt(xi int, ni int, hi int, zi int) int {
+	// x = normalizedValue
+	// n = suppressionFactor
+	// h = threshold
+	// z = scale
+	x := float64(xi)
+	n := float64(ni)
+	h := float64(hi)
+	z := float64(zi)
 	k := 100000.0
 
 	// Calculate zero point
