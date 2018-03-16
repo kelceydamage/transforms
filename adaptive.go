@@ -59,7 +59,7 @@ func AdaptiveZoneInt(normalIndicator int, multi int, threshold int, scale int) i
 	return int(y)
 }
 
-// AdaptiveZoneInt ...
+// AdaptiveZoneFlt ...
 func AdaptiveZoneFlt(normalIndicator float64, multi float64, threshold float64, scale float64) float64 {
 	x := normalIndicator
 	n := multi
