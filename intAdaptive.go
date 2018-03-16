@@ -58,33 +58,3 @@ func AdaptiveZoneInt(normalIndicator int, multi int, threshold int, scale int) i
 	math.Round(y)
 	return int(y)
 }
-
-// AdaptiveZoneFlt ...
-func AdaptiveZoneFlt(normalIndicator float64, multi float64, threshold float64, scale float64) float64 {
-	x := normalIndicator
-	n := multi
-	h := threshold
-	z := scale
-	k := 100000.0
-	aFunc := func(h, k float64) float64 {
-		return (math.Pow(h, 2) - h + k) / math.Pow(h, 3.0)
-	}
-
-	bFunc := func(h, a, k float64) float64 {
-		return (k - ((a * math.Pow(h, 3.0)) - (0.01 * (a * math.Pow(h, 2.0))))) / h
-	}
-
-	xFunc := func(x, n float64) float64 {
-		return (x / n) * 100.0
-	}
-
-	a := aFunc(h, k)
-	b := bFunc(h, a, k)
-	x = xFunc(x, n)
-	y := 100.0 - ((a*math.Pow(x, 3.0))-(0.01*a*math.Pow(x, 2.0))+b*x)/1000.0 + z
-	if y >= 100.0 {
-		y = 100.0
-	}
-	math.Round(y)
-	return y
-}
