@@ -31,8 +31,8 @@ import (
 //
 // Threshold
 //
-//     Threshold, h: A relative point of inflection where the straight line will curve.
-//     At [scale=100] the curve will always from exactly at threshold.
+// Threshold, h: A relative point of inflection where the straight line will curve.
+// At [scale=100] the curve will always from exactly at threshold.
 //
 // Scale
 //
