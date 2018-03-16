@@ -55,9 +55,9 @@ import (
 // Example of a close-ended curve (x, 1.16724*100, 80.0, 20.0), in a range of 0=>99 a value of 99 will
 // equal 0, while all values up to 56 (56%) will equal 100.
 //
-//     n := n := AdaptiveZoneInt(99, 1.16724*100, 80, 20)
+//     n := n := AdaptiveZoneInt(99, 1.16724, 80, 20)
 func AdaptiveZoneInt(xi int, n float64, h float64, z float64) int {
-	x := float64(xi)
+	x := float64(xi) / 100
 	k := 100000.0
 
 	// Calculate zero point
