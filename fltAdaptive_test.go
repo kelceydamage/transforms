@@ -13,7 +13,7 @@ func ExampleAdaptiveZoneFlt() {
 	var processed []float64
 	signal := []float64{0.1, 0.23, 0.44, 0.25, 0.33, 0.72, 0.48, 0.26, 0.15, 0.3}
 	for _, v := range signal {
-		processed = append(processed, AdaptiveZoneFlt(v, 1.16724*100, 80.0, 20.0))
+		processed = append(processed, AdaptiveZoneFlt(v, 1.16724, 80.0, 20.0))
 	}
 	fmt.Println(processed)
 }
