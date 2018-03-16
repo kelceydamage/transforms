@@ -41,8 +41,6 @@ import (
 //
 // Example of a close-ended curve (x, 1.16724, 80.0, 20.0), in a range of 0=>100 a value of 100 will equal 0,
 // while all values up to 0.56 (56%) will equal 100.
-//
-//
 func AdaptiveZoneFlt(normalizedValue float64, suppressionFactor float64, threshold float64, scale float64) float64 {
 	x := normalizedValue
 	n := suppressionFactor
