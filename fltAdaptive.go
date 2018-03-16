@@ -29,18 +29,27 @@ import (
 // AdaptiveZoneFlt converts a normalized float (percent expressed as 0.0 - 1.0) and determines if it
 // exceeds the normalZone and by how much.
 //
-//     [threshold] is a relative point of inflection where the straight line will curve. At [scale=100] the
-//     curve will always from exactly at threshold.
+// Threshold
 //
-//     [scale] is a y axis weight, at 100 the inflection point is == to the threshold
+//     A relative point of inflection where the straight line will curve. At [scale=100] the curve will
+//     always from exactly at threshold.
 //
-//     [suppressionFactor] envelopes the normilization of the norma I. at 1, 0.50 == 50. At 2, 0.50 == 25.
-//     This can help squash signals with too much variance.
+// Scale
 //
-//     [normalizedValue] is a signal value expressed as a float.
+//     Y axis shift, at 100 the inflection point is == to the threshold
+//
+// SuppressionFactor
+//
+//     Envelopes the norma I. at 1, 0.50 == 50. At 2, 0.50 == 25. This can help squash signals with too much
+//     variance.
+//
+// NormalizedValue
+//
+//     is a signal value expressed as an float64.
 //
 // Example of a close-ended curve (x, 1.16724, 80.0, 20.0), in a range of 0=>100 a value of 100 will equal 0,
 // while all values up to 0.56 (56%) will equal 100.
+//     n := AdaptiveZoneFlt(0.50, 1.16724, 80.0, 20.0)
 func AdaptiveZoneFlt(normalizedValue float64, suppressionFactor float64, threshold float64, scale float64) float64 {
 	x := normalizedValue
 	n := suppressionFactor
