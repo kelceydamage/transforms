@@ -1,6 +1,7 @@
 package transforms
 
 import (
+	"fmt"
 	"strconv"
 	"testing"
 )
@@ -9,7 +10,12 @@ import (
 //-------------------------------------------------------------------------------------------------- <-100
 
 func ExampleAdaptiveZoneInt() {
-	AdaptiveZoneInt(99, 1.16724*100, 80.0, 20.0)
+	var processed []int
+	signal := []int{1, 23, 44, 25, 33, 72, 48, 26, 15, 3}
+	for _, v := range signal {
+		processed = append(processed, AdaptiveZoneInt(v, 1.16724*100, 80.0, 20.0))
+	}
+	fmt.Println(processed)
 }
 
 func TestAdaptiveZoneInt(t *testing.T) {
