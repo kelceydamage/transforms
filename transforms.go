@@ -18,6 +18,6 @@
 //---------------------------------------------------------------------------------------------------- <-100
 // This file is to pretty up the godoc.
 
-// Package transforms is a library of types and methods that make manipulating slices a lot easier by
-// providing some basic functionality
+// Package transforms is a library of types and methods for running transform algorithms against certain
+// Types
 package transforms
