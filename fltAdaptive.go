@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------------------------------- <-100
+//-------------------------------------------------------------------------------------------------- <-100
 // Author: Kelcey Damage
 // Go: 1.10
 
@@ -14,8 +14,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Doc
-//---------------------------------------------------------------------------------------------------- <-100
+// Doc (80 char length for optimal godoc code-block parsing)                    | <- 80
+//-------------------------------------------------------------------------------------------------- <-100
 
 package transforms
 
@@ -24,28 +24,28 @@ import (
 )
 
 // Code
-//---------------------------------------------------------------------------------------------------- <-100
+//-------------------------------------------------------------------------------------------------- <-100
 
 // AdaptiveZoneFlt converts a normalized float (percent expressed as 0.0 - 1.0) and determines if it
 // exceeds the normalZone and by how much. Return values a capped at 100 and -Inf.
 //
-// Threshold [h]
+// Threshold
 //
-//     A relative point of inflection where the straight line will curve. At [scale=100] the curve will
-//     always from exactly at threshold.
+//     Threshold, h: A relative point of inflection where the straight line will curve.
+//     At [scale=100] the curve will always from exactly at threshold.
 //
-// Scale [z]
+// Scale
 //
-//     Y axis shift, at 100 the inflection point is == to the threshold.
+//     Scale, z: Y axis shift, at 100 the inflection point is == to the threshold.
 //
-// SuppressionFactor [n]
+// SuppressionFactor
 //
-//     Envelopes the norma I. at 1, 0.50 == 50. At 2, 0.50 == 25. This can help squash signals with too much
-//     variance.
+//     SuppressionFactor, n: Envelopes the norma I. at 1, 0.50 == 50. At 2, 0.50 == 25.
+//     This can help squash signals with too much variance.
 //
-// NormalizedValue [x]
+// NormalizedValue
 //
-//     is a signal value expressed as an float64.
+//     NormalizedValue, x: is a signal value expressed as an float64.
 //
 // Example of a close-ended curve (x, 1.16724, 80.0, 20.0), in a range of 0=>100 a value of 100 will equal 0,
 // while all values up to 0.56 (56%) will equal 100.
