@@ -26,8 +26,8 @@ import (
 // Code
 //-------------------------------------------------------------------------------------------------- <-100
 
-// AdaptiveZoneInt converts a normalized float (percent expressed as 0.0 - 1.0) and determines if it
-// exceeds the normalZone and by how much. Return values a capped at 100 and -Inf.
+// AdaptiveZoneInt converts an int (0 => +Inf) and determines if it exceeds the normalZone and by
+// how much. Return values a capped at 100 and -Inf.
 //
 // Threshold
 //

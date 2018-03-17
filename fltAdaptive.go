@@ -26,8 +26,8 @@ import (
 // Code
 //-------------------------------------------------------------------------------------------------- <-100
 
-// AdaptiveZoneFlt converts a normalized float (percent expressed as 0.0 - 1.0) and determines if it
-// exceeds the normalZone and by how much. Return values a capped at 100 and -Inf.
+// AdaptiveZoneFlt converts a float64 (0.01 => +Inf) and determines if it exceeds the normalZone
+// and by how much. Return values a capped at 100 and -Inf.
 //
 // Threshold
 //
