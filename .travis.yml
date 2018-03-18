@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=9afdd937b15b1206c9cfa4edcf3ca3d5ec67b28f38c11e68b07d8c8c5e227779
+    - CC_TEST_REPORTER_ID=3d299a77a76add39688d1ae0fa5cf2227deea910d906f5d4f3522b881b578fa3
 language: go
 go:
   - 1.9
