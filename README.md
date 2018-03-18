@@ -1,5 +1,7 @@
 # transforms
+[![Build Status](https://travis-ci.org/kelceydamage/transforms.svg?branch=master)](https://travis-ci.org/kelceydamage/transforms) [![CircleCI](https://circleci.com/gh/kelceydamage/transforms/tree/master.svg?style=shield)](https://circleci.com/gh/kelceydamage/transforms/tree/master)  [![Coverage Status](https://coveralls.io/repos/github/kelceydamage/transforms/badge.svg?branch=master&service=github)](https://coveralls.io/github/kelceydamage/transforms?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/kelceydamage/transforms)](https://goreportcard.com/report/github.com/kelceydamage/transforms) [![CodeFactor](https://www.codefactor.io/repository/github/kelceydamage/transforms/badge)](https://www.codefactor.io/repository/github/kelceydamage/transforms) [![Maintainability](https://api.codeclimate.com/v1/badges/41fec5ebe52b5258ee3b/maintainability)](https://codeclimate.com/github/kelceydamage/transforms/maintainability) [![GoDoc](https://godoc.org/github.com/kelceydamage/transforms?status.svg)](https://godoc.org/github.com/kelceydamage/transforms) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+
 various algorithms for altering floats and ints.
 
 # Documentation
-https://godoc.org/github.com/kelceydamage/transforms
+https://godoc.org/github.com/kelceydamage/transforms 

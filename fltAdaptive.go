@@ -81,6 +81,5 @@ func AdaptiveZoneFlt(x float64, n float64, h float64, z float64) float64 {
 	if y >= 100.0 {
 		y = 100.0
 	}
-	math.Round(y)
 	return y
 }
