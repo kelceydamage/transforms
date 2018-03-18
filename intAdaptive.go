@@ -82,6 +82,5 @@ func AdaptiveZoneInt(xi int, n float64, h float64, z float64) int {
 	if y >= 100.0 {
 		y = 100.0
 	}
-	math.Round(y)
 	return int(y)
 }
